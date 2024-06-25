@@ -1,20 +1,8 @@
 import { photographerTemplate } from '../templates/photographer.js'
-import { validatePhotographers } from '../utils/validatePhotographers.js'
-import { fetchData } from '../utils/fetchData.js'
-
-const getPhotographers = async () => {
-    try {
-        const data = await fetchData('../../data/photographers.json')
-        validatePhotographers(data)
-        return data.photographers
-    } catch (error) {
-        console.error('Error fetching or validating data: ', error)
-        return []
-    }
-}
+import { getPhotographers } from '../utils/getPhotographers.js'
 
 const displayData = (photographers) => {
-    const photographersSection = document.querySelector('.photographer_section')
+    const photographersSection = document.querySelector('.photographers_section')
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerTemplate(photographer)
