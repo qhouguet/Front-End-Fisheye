@@ -8,7 +8,7 @@ const validatePhotographers = (data) => {
 
 export const getPhotographers = async () => {
     try {
-        const data = await fetchData('https://github.com/qhouguet/Front-End-Fisheye/blob/main/data/photographers.json')
+        const data = await fetchData('data/photographers.json')
         validatePhotographers(data)
         return data.photographers
     } catch (error) {
