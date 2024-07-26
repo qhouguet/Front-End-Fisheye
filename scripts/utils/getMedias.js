@@ -8,7 +8,7 @@ const validateMedias = (data) => {
 
 export const getMedias = async () => {
     try {
-        const data = await fetchData('data/photographers.json')
+        const data = await fetchData('https://qhouguet.github.io/Front-End-Fisheye/data/photographers.json')
         validateMedias(data)
         return data.media
     } catch (error) {
