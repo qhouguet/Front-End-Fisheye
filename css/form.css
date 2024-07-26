@@ -1,0 +1,126 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.modal,
+.lightbox-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: rgba(196, 196, 196, 0.4);
+}
+
+.lightbox-wrapper {
+    background: #fff;
+}
+
+.modal__dialog {
+    border-radius: 5px;
+    background-color: #db8876;
+    width: 50%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+    box-shadow: -5px 10px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal__title {
+    color: #000;
+    font-size: 64px;
+}
+
+.modal__img {
+    width: 100%;
+    height: 100%;
+}
+
+.modal__close,
+.lightbox__close {
+    height: 65px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.modal__form,
+.modal__field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+}
+
+.modal__label {
+    color: #312e2e;
+    font-size: 36px;
+}
+
+.modal__input {
+    display: flex;
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    padding: 25px 20px;
+
+    color: #000;
+    font-size: 36px;
+}
+
+.modal__input::placeholder {
+    opacity: 0.3;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+    outline: 1px solid #901c1c;
+    box-shadow: 0 0 10px #901c1c;
+}
+
+textarea.modal__input {
+    height: 170px;
+    resize: none;
+    margin-bottom: 26px;
+}
+
+.modal__button--send {
+    border-radius: 5px;
+    background: #901c1c;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    align-self: flex-start;
+    padding: 23px 50px;
+    border: none;
+}
+
+.modal__field:last-of-type {
+    padding-top: 8px;
+}

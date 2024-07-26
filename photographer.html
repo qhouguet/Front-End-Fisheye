@@ -10,30 +10,105 @@
 </head>
 
 <body>
-  <header>
-    <img src="assets/images/logo.png" class="logo" />
+  <header id="header">
+    <a href="./index.html" alt="Fisheye Home page">
+      <img src="assets/medias/logo.png" class="logo" alt="" />
+    </a>
   </header>
   <main id="main">
-    <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-    </div>
+    <section id="photograph-header" class="photograph-header">
+      <button class="contact-button">Contactez-moi</button>
+    </section>
+
+
+    <section id="filters" class="filters">
+      <h2 class="filters__title">Trier par</h2>
+      <div class="filters__dropdown">
+        <button id="select" class="filters__dropdown--button" type="button" role="button" aria-haspopup="listbox"
+          aria-expanded="false" aria-controls="sort-dropdown" aria-label="Order by">
+          <span id="current_filter" class="current__filter">Popularité</span><svg id="arrow" width="32" height="32"
+            viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <g id="expand_more-24px 4">
+              <path id="Vector"
+                d="M9.88 20.5469L16 14.4402L22.12 20.5469L24 18.6669L16 10.6669L8 18.6669L9.88 20.5469Z" />
+            </g>
+          </svg>
+        </button>
+        <ul id="sort-dropdown" role="listbox" class="dropdown__content hidden" aria-hidden="true">
+          <li role="option" class="hidden" aria-hidden="true">
+            <button class="dropdown__content--button" data-btn-title="popularity" type="button" tabindex="-1"
+              aria-label="Order by Popularity">Popularité</button>
+          </li>
+          <li role="option">
+            <button class="dropdown__content--button" data-btn-title="date" type="button" tabindex="-1"
+              aria-label="Order by Date">Date</button>
+          </li>
+          <li role="option">
+            <button class="dropdown__content--button" data-btn-title="title" type="button" tabindex="-1"
+              aria-label="Order by Title">Titre</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
   </main>
-  <div id="contact_modal">
-    <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+
+
+
+
+
+  <!-- Modal -->
+  <div id="contact-modal" class="modal" aria-modal="true" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <header class="modal__header">
+        <h1 id="dialog-title" class="modal__title">Contactez-moi<br></h1>
+        <button id="modal-close" class="modal__close" aria-label="Close contact form">
+          <img src="assets/icons/close.svg" alt="Close button" />
+        </button>
       </header>
-      <form>
-        <div>
-          <label>Prénom</label>
-          <input />
+      <p id="dialog-description" class="visually-hidden">Formulaire de contact pour Mimi Keel.</p>
+      <form class="modal__form">
+        <div class="modal__field">
+          <label for="first-name" class="modal__label" is="first-name-label">Prénom</label>
+          <input id="first-name" class="modal__input" aria-labelledby="first-name-label" placeholder="Jane" />
         </div>
-        <button class="contact_button">Envoyer</button>
+        <div class="modal__field">
+          <label for="last-name" class="modal__label" id="last-name-label">Nom</label>
+          <input id="last-name" class="modal__input" aria-labelledby="last-name-label" placeholder="Doe" />
+        </div>
+        <div class="modal__field">
+          <label for="email" class="modal__label" id="email-label">Email</label>
+          <input id="email" class="modal__input" aria-labelledby="email-label" placeholder="jane@doe.com" />
+        </div>
+        <div class="modal__field">
+          <label for="message" class="modal__label" id="message-label">Votre message</label>
+          <textarea id="message" class="modal__input" aria-labelledby="message-label"
+            placeholder="Votre message"></textarea>
+        </div>
+        <button type="submit" class="modal__button--send">Envoyer</button>
       </form>
     </div>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox-wrapper" aria-modal="true" aria-hidden="true">
+    <div class="lightbox" role="dialog" aria-label="">
+      <button id="lightbox__close" class="lightbox__close" aria-label="Close dialog">
+        <img src="assets/icons/close_red.svg" alt="Close button" />
+      </button>
+      <button class="lightbox__previous" aria-label="Previous image">
+        <img src="assets/icons/arrow_left.svg" />
+      </button>
+      <figure class="lightbox__media" aria-label="Current image">
+      </figure>
+      <button class="lightbox__next" aria-label="Next image">
+        <img src="assets/icons/arrow_right.svg" />
+      </button>
+    </div>
+  </div>
+
   <script type="module" src="/scripts/pages/photographer.js"></script>
+  <script src="/scripts/utils/contactForm.js"></script>
 </body>
 
 </html>
